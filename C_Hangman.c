@@ -33,6 +33,25 @@ int main()
 	printf ("\n\nYou have to type only one letter in a single try");
 	printf ("\n\nYou have %d tries to try and guess the keyword", MAX_TRIES);
 	printf ("\n---------------------------------------------------");
+	while (num_of_wrong_guess < MAX_TRIES)
+	{
+		printf ("\n\n %s", unknown);
+		printf ("\n\nGuess a alphabet: ");
+		scanf ("%c", &alphabet);
+
+		if (alpha_insert (alphabet, word, unknown) == 0)
+		{
+			printf ("\nWoops! That letter isn't in there\n");
+			++num_of_wrong_guess;
+		}
+		else
+		{
+			printf ("\nYou found a letter! Awesome :D\n");
+		}
+		
+		printf ("You have %d guesses left\n", MAX_TRIES - num_of_wrong_guess);
+
+
 
 }
 
